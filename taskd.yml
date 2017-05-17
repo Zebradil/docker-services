@@ -1,0 +1,22 @@
+# docker run -d -p 53589:53589 -v /var/taskd:/var/taskd ogarcia/taskd
+
+version: "3"
+
+services:
+  taskd:
+    image: ogarcia/taskd
+    ports:
+      - 53589:53589
+    volumes:
+      - /var/taskd:/var/taskd
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 10M
+      restart_policy:
+        delay: 30s
