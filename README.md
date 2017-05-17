@@ -3,9 +3,14 @@ Docker services collection
 
 Taskd
 ---
-Containers:
+
+**Containers**:
  - [ogarcia/taskd](https://github.com/ogarcia/taskd)
-Volumes:
+
+**Volumes**:
  - `/var/taskd`
-Ports:
+
+**Ports**:
  - 53589
+
+**Run**: `docker stack deploy -c taskd.yml taskd`
