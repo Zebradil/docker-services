@@ -5,7 +5,7 @@ Taskd
 ---
 
 **Containers**:
- - [ogarcia/taskd](https://github.com/ogarcia/taskd)
+ - [ogarcia/taskd](https://github.com/ogarcia/docker-taskd)
 
 **Volumes**:
  - `/var/taskd`
