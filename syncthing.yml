@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  syncthing:
+    image: zebradil/syncthing
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
+    volumes:
+      - ${SYNCTHING_CONFIG_DIR:-config}:/home/syncthing/.config/syncthing
+      - ${SYNCTHING_DATA_DIR:-data}:/home/syncthing/Sync
+
+volumes:
+  config:
+    driver: local
+  data:
+    driver: local
