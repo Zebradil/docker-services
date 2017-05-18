@@ -10,6 +10,15 @@ services:
     volumes:
       - ${SYNCTHING_CONFIG_DIR:-config}:/home/syncthing/.config/syncthing
       - ${SYNCTHING_DATA_DIR:-data}:/home/syncthing/Sync
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 100M
 
 volumes:
   config:
